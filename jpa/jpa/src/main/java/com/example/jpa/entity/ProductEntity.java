@@ -3,8 +3,8 @@ package com.example.jpa.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -24,8 +24,9 @@ import java.time.LocalDateTime;
                 @Index(name = "sku_index",columnList = "sku")
         }
 )
+@ToString
 
-public class Product {
+public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
